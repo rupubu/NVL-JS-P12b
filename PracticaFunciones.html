@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <script type="text/javascript">
+      var anPares = [];
+      var anImpares = [];
+      var nValor;
+
+      function esPar(nNumero){
+        if (nNumero % 2 == 0) return true;
+      }
+      function nRandom(nBase) {
+        return Math.floor((Math.random() * nBase) + 1);
+      }
+
+      for (var nIdx = 0; nIdx < 50; nIdx++) {
+        nValor = nRandom(100);
+        if (esPar(nValor)) {
+          anPares.push(nValor);
+        }
+        else {
+          anImpares.push(nValor);
+        }
+      }
+      alert("El array pares tiene " + anPares.length + " elementos.");
+      alert("El array impares tiene " + anImpares.length + " elementos.");
+
+// Otra forma de hacerlo
+      var aArrayParImpar = [];
+
+      function CargarArrays() {
+        var anParesX = [];
+        var anImparesX = [];
+
+        for (var nIdx = 0; nIdx < 50; nIdx++) {
+          nValor = Math.floor((Math.random() * 100) + 1);
+          if (esPar(nValor)) {
+            anParesX.push(nValor);
+          }
+          else {
+            anImparesX.push(nValor);
+          }
+        }
+          return [anParesX, anImparesX];
+      }
+
+      aArrayParImpar = CargarArrays();
+      alert("El array pares tiene " + aArrayParImpar[0].length + " elementos.");
+      alert("El array impares tiene " + aArrayParImpar[1].length + " elementos.");
+    </script>
+    <title>Práctica de funciones</title>
+  </head>
+  <body>
+
+  </body>
+</html>
